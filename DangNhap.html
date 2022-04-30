@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicons/xanhvang.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="libs/jquery.min.js"></script>
+    <!-- Popper Bootstrap -->
+    <script src="libs/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="libs/bootstrap.min.js"></script>
+    <!-- Bootstrap table CSS -->
+    <link rel="stylesheet" href="libs/bootstrap-table.min.css">
+    <!-- Bootstrap table JS -->
+    <script src="libs/bootstrap-table.min.js"></script>
+    <!-- Table mobile -->
+    <script src="libs/bootstrap-table-mobile.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-login.css">
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="position-sticky" style="top: 0; z-index: 1000;">
+        <div class="navbar alert-success navbar-light navbar-expand-lg d-flex flex-wrap  justify-content-lg-start">
+            <div class="container-fluid">
+                <a href="TrangChu.html" class="navbar-brand ">
+                    <img src="image/favicons/xanhvang.png" width="60px" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="TrangChu.html" class="nav-link px-2 text-dark">Trang chủ</a></li>
+                        <li><a href="SanPham.html" class="nav-link px-2 text-dark">Sản phẩm</a></li>
+                        <li><a href="Tintuc.html" class="nav-link px-2 text-dark">Tin tức</a></li>
+                        <li><a href="Tintuc.html" class="nav-link px-2 text-dark">Khuyến mãi</a></li>
+                    </ul>
+                    <!-- NAV SEARCH -->
+                    <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 btn-group">
+                        <input type="search" class="form-control" placeholder="Tìm kiếm..."
+                            aria-label="Search">
+                        <button class="btn btn-success"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <!-- CHAT BOX -->
+        <i class="fa fa-comment-dots fa-2x text-success position-fixed" style="bottom:50px; right:2rem; z-index: 1000;"
+            data-bs-toggle="modal" data-bs-target="#chat"></i>
+        <!-- Modal -->
+        <div class="modal fade " id="chat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-outline-success">
+                    <div class="modal-header bg-success">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hiện đang ngoài khung giờ làm việc. Mong bạn hãy liên hệ sau
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FORM LOGIN -->
+        <div class="container">
+            <div class="row">
+                <div class="group-box col-md-4 mx-auto">
+                    <form class="login" id="login" onsubmit="return frmJson()">
+                        <div class="form-floating mb-3">
+                            <input type="text" required class="form-control" id="SDT" placeholder="Số điện thoại">
+                            <label for="floatingInput">Số điện thoại</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="password" class="form-control" id="Password" placeholder="Không rỗng">
+                            <label>Mật khẩu</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" checked id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Nhớ tài khoản</label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Đăng nhập</button>
+                        <a href="#">Quên mật khẩu?</a>
+                        <p>Hoặc</p>
+                        <div class="check">
+                            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                            <label class="btn btn-primary" for="btn-check"> <a
+                                    href="https://www.facebook.com/"><b>Facebook</b></a> </label>
+                            <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+                            <label class="btn btn-dark" for="btn-check-2"><img src="image/apple.png"> <a
+                                    href="https://appleid.apple.com/"><b>Apple</b></a></label>
+                            <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+                            <label class="btn google" for="btn-check-2"><a href="https://accounts.google.com/"><img
+                                        src="image/gg1.png"></a></label>
+                        </div>
+                        <p> <br> Bạn chưa có tài khoản?<a href="DangKy.html"> Đăng ký</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/DangNhap_DangKy.js"></script>
+</body>
+</html>

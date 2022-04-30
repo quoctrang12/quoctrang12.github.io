@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicons/xanhvang.png">
+
+    <title>USmart - Vì sức khỏe cộng đồng</title>
+    <!-- Bootstrap CSS -->
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="libs/jquery.min.js"></script>
+    <!-- Popper Bootstrap -->
+    <script src="libs/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="libs/bootstrap.min.js"></script>
+    <!-- Bootstrap table CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+<body class="container">
+    <div id="header"></div>
+<!-- HEADER -->
+    <header class=" position-sticky" style="top: 0; z-index: 1000;">
+        <div class="navbar alert-success navbar-light navbar-expand-lg d-flex flex-wrap  justify-content-lg-start">
+            <div class="container-fluid">
+                <a href="TrangChu.html" class="navbar-brand me-1">
+                    <img src="image/favicons/xanhvang.png" width="60px" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="TrangChu.html" class="nav-link px-2 text-dark">Trang chủ</a></li>
+                        <li><a href="SanPham.html" class="nav-link px-2 text-dark">Sản phẩm</a></li>
+                        <li><a href="Tintuc.html" class="nav-link px-2 text-dark">Tin tức</a></li>
+                        <li><a href="Tintuc.html" class="nav-link px-2 text-dark">Khuyến Mãi</a></li>
+                        <li><a href="GioHang.html" class="nav-link px-2 text-dark position-relative">Giỏ hàng
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger count"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- NAV SEARCH -->
+                    <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 btn-group">
+                        <input id="search" type="search" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button id="btnsearch" class="btn btn-success" ><i class="fas fa-search"></i></button>
+                    </form>
+                    <!-- NAV CHƯA LOGIN -->
+                    <div class="text-end" role="group" id="offlogin">
+                        <a href="DangKy.html"><button type="button" class="btn btn-outline-dark me-2">Đăng ký</button></a>
+                        <a href="DangNhap.html"><button type="button" class="btn btn-outline-dark">Đăng nhập</button></a>
+                    </div>
+                    <!-- NAV ĐÃ LOGIN -->
+                    <div class="dropdown text-end position-relative" id="onlogin">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="image/admin.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small position-absolute" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                              <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                            </svg> Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg> Profile</a></li>
+                            <li><a class="dropdown-item" id="signout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                              <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                            </svg> Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- MAIN -->
+    <main class="container">
+        <div>
+            <!-- BUTTON CHAT -->
+            <i class="fa fa-comment-dots fa-2x text-success position-fixed"
+                style="bottom:50px; right:2rem; z-index: 1000;" data-bs-toggle="modal" data-bs-target="#chat"></i>
+            <!-- Modal -->
+            <div class="modal fade " id="chat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-outline-success">
+                        <div class="modal-header bg-success">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Hiện đang ngoài khung giờ làm việc. Mong bạn hãy liên hệ sau
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BUTTON ON TOP PAGE -->
+            <a href="#header"><i class="far fa-arrow-alt-circle-up fa-2x text-success position-fixed"
+                    style="bottom:10px; right:2rem; z-index: 1000;"></i></a>
+        </div>
+        <!-- SLIDE SHOW -->
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/Khuyenmai/khuyemai3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/khuyenmai1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/Khuyenmai2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/frisoKM.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/combo-2-chai-nuoc-ngot-KM.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/KM-giamgia.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/Khuyenmai/khuyenmai5.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="row">
+            <!-- LOCATE PAGE -->
+            <nav aria-label="breadcrumb" class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Trang chủ</li>
+                </ol>
+            </nav>
+            <!-- MENU SẢN PHẨM -->
+            <div class="col-md-2 menu">
+                <div class="position-sticky" style="top:5rem;">
+                    <div class="navbar navbar-expand-lg navbar-light ">
+                        <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupported">
+                            <div>
+                                <button type="button" class=" btn btn-success">Danh mục sản phẩm</button>
+                                <ul class="list-unstyled ps-0">
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed "
+                                            data-bs-toggle="collapse" data-bs-target="#mi-collapse"
+                                            aria-expanded="false">
+                                            Mì, cháo, phở
+                                        </button>
+                                        <div class="collapse" id="mi-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="SanPham.html" class="link-dark rounded">Mì</a></li>
+                                                <li><a href="#" class="link-dark rounded">Cháo</a></li>
+                                                <li><a href="#" class="link-dark rounded">Phở</a></li>
+                                                <li><a href="#" class="link-dark rounded">Hủ tiếu</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#thit-collapse"
+                                            aria-expanded="false">
+                                            Thịt các loại
+                                        </button>
+                                        <div class="collapse" id="thit-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Thịt gà</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thịt heo</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thịt bò</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#hs-collapse"
+                                            aria-expanded="false">
+                                            Hải sản các loại
+                                        </button>
+                                        <div class="collapse" id="hs-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Cá</a></li>
+                                                <li><a href="#" class="link-dark rounded">Tôm</a></li>
+                                                <li><a href="#" class="link-dark rounded">Cua</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#r-collapse"
+                                            aria-expanded="false">
+                                            Rau củ
+                                        </button>
+                                        <div class="collapse" id="r-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Rau các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Củ các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Trái cây các loại</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed "
+                                            data-bs-toggle="collapse" data-bs-target="#tbyt-collapse"
+                                            aria-expanded="false">
+                                            Thiết bị y tế
+                                        </button>
+                                        <div class="collapse" id="tbyt-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Khẩu trang</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thuốc</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước rửa tay</a></li>
+                                                <li><a href="#" class="link-dark rounded">Máy lọc không khí</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#dauan-collapse"
+                                            aria-expanded="false">
+                                            Dầu ăn, gia vị
+                                        </button>
+                                        <div class="collapse" id="dauan-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Nước tương</a></li>
+                                                <li><a href="#" class="link-dark rounded">Dầu ăn</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước mắm</a></li>
+                                                <li><a href="#" class="link-dark rounded">Đường</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#dodung-collapse"
+                                            aria-expanded="false">
+                                            Đồ dùng cá nhân
+                                        </button>
+                                        <div class="collapse" id="dodung-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Đồ Skincare</a></li>
+                                                <li><a href="#" class="link-dark rounded">Dầu gội</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước súc miệng</a></li>
+                                                <li><a href="#" class="link-dark rounded">Sữa tắm</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#thucuong-collapse"
+                                            aria-expanded="false">
+                                            Thức uống
+                                        </button>
+                                        <div class="collapse" id="thucuong-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Nước ngọt các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thức uống có cồn</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước khoáng các loại</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SẢN PHẨM -->
+            <div class="col-md-8">
+                <!-- SẢN PHẨM NỔI BẬT -->
+                <h5 class="mt-3">Sản phẩm nổi bật</h5>
+                <div class="row hot-product">
+                    <div class="card col">
+                        <img src="image/hao-hao.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info">Mì gói các loại</p>
+                        </div>
+                    </div>
+                    <div class="card col">
+                        <img src="image/bi-do.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info ">Rau, củ các loại</p>
+                        </div>
+                    </div>
+                    <div class="card col">
+                        <img src="image/suatuoi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info">Sữa tươi các loại</p>
+                        </div>
+                    </div>
+                    <div class="card col">
+                        <img src="image/nuocngot.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info">Nước uống các loại</p>
+                        </div>
+                    </div>
+                    <div class="card col">
+                        <img src="image/nuoc-rua-tay.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info">Nước rửa tay</p>
+                        </div>
+                    </div>
+                    <div class="card col">
+                        <img src="image/gao.jpg" class="card-img-top" alt="...">
+                        <div class="card-body group-product">
+                            <p class="card-text text-center text-info">Gạo các loại</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- DEAL -->
+                <div class="row">
+                    <div class="col-sm-6  d-grid  mx-auto ">
+                        <img src="image/Khuyenmai/Deal-soc-desk.png" width="100%" alt="">
+                    </div>
+                </div>
+                <!-- CÁC Ô SẢN PHẨM -->
+                <div class="row">
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/tuong-ot-tron-5-vi-cay-dam-knorr.jpg" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tương ớt tròn 5 vị cay đậm Knorr</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">10.000 VND
+                                        <span class="badge bg-danger rounded-pill">-33%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,6/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp001"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm">
+                        <a href="ChiTietSanPham.html">
+                            <div class="card">
+                                <img src="image/Khuyenmai/nuoc-giat-surf-huong-nuoc-hoa-tui-3-lit.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nước giặt Surf hương nước hoa</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">94.500 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-31%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,7/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp002"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/gel-tam-duong-am.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gel tắm dưỡng ẩm Fresh Organic</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">71.500 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-35%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            (4/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp003"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-2 pt-2 pb-2 alert-warning text-dark h4 group-title">
+                        <span class="text-dark">Đồ uống các loại</span>
+                        <button type="button" class="btn alert-warning float-end lh-1"> Xem thêm <svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/loc-6-lon-nuoc-ngot-mirinda-da-me.jpg" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nước ngọt Mirinda đá me</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">54.000 VND
+                                        <span class="badge bg-danger rounded-pill">-13%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,3/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp004"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/loc-6-lon-nuoc-ngot-pepsi-khong-calo.jpg" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nước ngọt Pepsi không calo</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">54.000 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-10%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,7/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp005"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/6-chai-tra-o-long-tea-plus-vi-chanh.jpg" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Trà ô long Tea Plus vị chanh</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">40.000 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-30%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,7/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success" id="sp006"
+                                            onclick="addCard(id);">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-2 pt-2 pb-2 alert-warning text-dark h4 group-title">
+                        <span class="text-dark">Mì gói các loại</span>
+                        <a href="SanPham.html">
+                            <button type="button" class="btn alert-warning float-end lh-1"> Xem thêm <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/hao-hao.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mì Hảo Hảo tôm chua cay</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">90.000 VND
+                                        <span class="badge bg-danger rounded-pill">-10%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,9/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/phoga.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Phở gà Cung Đình Hà Nội</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">195.000 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-5%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,6/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/mimodern.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mì Modern lẩu Thái tôm</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">156.000 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-10%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4,6/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-2 pt-2 pb-2 alert-warning text-dark h4 group-title">
+                        <span class="text-dark">Chăm sóc cá nhân</span>
+                        <button type="button" class="btn alert-warning float-end lh-1"> Xem thêm <svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/kem-danh-rang-closeup.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kem đánh răng Closeup sạch khuẩn hương bạc hà</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">34.500 VND
+                                        <span class="badge bg-danger rounded-pill">-16%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            (4/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/sua-rua-mat-cetaphil.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sữa rửa mặt Cetaphil <br><br></h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">299.500 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-10%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4.5/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm">
+                        <a href="">
+                            <div class="card">
+                                <img src="image/Khuyenmai/khau-trang-mayan-3d-mask.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Khẩu trang Mayan 3D Mask PM 2.5</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-danger">26.500 VNĐ
+                                        <span class="badge bg-danger rounded-pill">-5%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            (4.5/5)
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="#" class="card-link"><button class="btn btn-outline-success">Thêm vào giỏ
+                                            hàng</button></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- NEXT PAGE PRODUCT -->
+                <div>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="TrangChu.html" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="TrangChu.html">1</a></li>
+                        <li class="page-item"><a class="page-link" href="TrangChu1.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="TrangChu1.html" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- NEWS -->
+            <div class="col-md-2 tintuc">
+                <div class="position-sticky" style="top: 5rem;">
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-mirinda.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Từ 14/12 - 27/12 mua 6 lon Mirinda tặng 1 chai....</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-gao.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Gạo Ngon Dẻo Thơm - Bữa Cơm Đầm Ấm giảm....</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-coca.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Hóa đơn 50k sản phẩm Coca-cola, tặng 3 chai Fanta soda kem 300ml...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-ngay-den-toi.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Ngày đen tối, giảm ngập lối giảm đến 50%...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-duck.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Giữ nhà thơm mát sạch khuẩn - Khuyến mại giá cực hời lên đến 34%...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container">
+        <div class="last">
+            <p>Tổng đài: 1900.9999 - 028.1204.1708 (7:00 - 21:30)</p>
+            <div class="list-profile row">
+                <div class="col-md">
+                    <ul>
+                        <p>Chính sách</p>
+                        <li>
+                            <a href="#">Chính sách đổi trả</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách giao hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách bảo mật</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Dịch vụ</p>
+                        <li>
+                            <a href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li>
+                            <a href="#">Hóa đơn điện tử</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Thông tin</p>
+                        <li>
+                            <a href="#">Thông tin công ty</a>
+                        </li>
+                        <li>
+                            <a href="#">Quy chế hoạt động</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Phản hồi</p>
+                        <li>
+                            <a href="#">Khiếu nại khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Phản hồi khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Góp ý khách hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Kết nối với chúng tôi</p>
+            <a href="#"><img src="image/logofooter.png" width="200px" alt=""></a>
+        </div>
+        <div class="text-center">
+            <p class="thong-tin">
+               © 2021. Công Ty Cổ Phần Thương Mại US. GPDKKD: 331471746 cấp ngày 29/11/2010. <br>
+                Giấy phép thiết lập mạng xã hội trên mạng (Số 0/GP-BTTTT) do khoa Công nghệ thông tin và truyền thông
+                cấp
+                ngày 21/01/2021. <br>
+                Trụ sở chính: Đại học Cần Thơ. <br>
+                Địa chỉ liên hệ: Khoa CNTT và truyền thông ĐHCT <br>
+                Email:lienhe@usmart.com <br> Chịu trách nhiệm nội dung: Trần Thị Kim Linh - Nguyễn Quốc Trạng.
+            </p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

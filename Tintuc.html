@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicons/xanhvang.png">
+    <title>Tin tức</title>
+     <!-- Bootstrap CSS -->
+     <link href="libs/bootstrap.min.css" rel="stylesheet">
+     <!-- Jquery -->
+     <script src="libs/jquery.min.js"></script>
+     <!-- Popper Bootstrap -->
+     <script src="libs/popper.min.js"></script>
+     <!-- Bootstrap -->
+     <script src="libs/bootstrap.min.js"></script>
+     <!-- Bootstrap table CSS -->
+     <link rel="stylesheet" href="libs/bootstrap-table.min.css">
+     <!-- Bootstrap table JS -->
+     <script src="libs/bootstrap-table.min.js"></script>
+     <!-- Table mobile -->
+     <script src="libs/bootstrap-table-mobile.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container">
+    <div id="header"></div>
+    <header class=" position-sticky" style="top: 0; z-index: 1000;">
+
+        <div class="navbar alert-success navbar-light navbar-expand-lg d-flex flex-wrap  justify-content-lg-start">
+            <div class="container-fluid">
+                <a href="TrangChu.html" class="navbar-brand ">
+                    <img src="image/favicons/xanhvang.png" width="60px" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="TrangChu.html" class="nav-link px-2 text-dark">Trang chủ</a></li>
+                        <li><a href="SanPham.html" class="nav-link px-2 text-dark">Sản phẩm</a></li>
+                        <li><a href="#" class="nav-link px-2 text-dark">Tin tức</a></li>
+                        <li><a href="Tintuc.html" class="nav-link px-2 text-dark">Khuyến Mãi</a></li>
+                        <li><a href="GioHang.html" class="nav-link px-2 text-dark position-relative">Giỏ hàng
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger count"></span></a>
+                    </li>
+
+                    </ul>
+                    <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 btn-group">
+                        <input id="search" type="search" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button id="btnsearch" class="btn btn-success"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="text-end" role="group" id="offlogin">
+                        <a href="DangKy.html"><button type="button" class="btn btn-outline-dark me-2">Đăng ký</button></a>
+                        <a href="DangNhap.html"><button type="button" class="btn btn-outline-dark">Đăng nhập</button></a>
+                    </div>
+                    <div class="dropdown" id="onlogin">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="image/admin.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small position-absolute" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                    </svg> Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg> Profile</a></li>
+                            <li><a class="dropdown-item" id="signout"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                        <path fill-rule="evenodd"
+                                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg> Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <div>
+
+            <!-- Button trigger modal -->
+            <i class="fa fa-comment-dots fa-2x text-success position-fixed"
+                style="bottom:50px; right:2rem; z-index: 1000;" data-bs-toggle="modal" data-bs-target="#chat"></i>
+
+
+            <!-- Modal -->
+            <div class="modal fade " id="chat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-outline-success">
+                        <div class="modal-header bg-success">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Hiện tại không có quản trị viên nào ở đây hết :))))) hẹn gặp lại
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#header"><i class="far fa-arrow-alt-circle-up fa-2x text-success position-fixed"
+                    style="bottom:10px; right:2rem; z-index: 1000;"></i></a>
+        </div>
+        <div class="row">
+            <!-- MENU SẢN PHẨM -->
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="test.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Tin tức</li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Tin tức -->
+        <div class="mb-4 text-white rounded">
+                <img src="image/Tintuc/quatet.png" width="100%" alt="">
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-xl-8">
+                <div
+                    class="row g-0 mt-0  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/pannacotta.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Mới nhất</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Bỏ túi cách làm panna cotta chanh dây thơm lừng, chua chua ngọt
+                                ngọt ai cũng mê</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Panna cotta là một món tráng miệng từ nước Ý đã chinh phục được bao thực khách khó tính nhất...</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 shadow-sm position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/suabot.jpg" width="100%"  alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Review sản phẩm</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Sữa bột NutiFood có những loại nào? Dành cho bé bao nhiêu tuổi?</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Sữa bột NutiFood là lựa chọn được nhiều mẹ tin dùng cho trẻ sơ sinh và trẻ nhỏ. Sữa bột NutiFood có những loại nào?</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/Cachim.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Công thức nấu ăn</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Cách làm cá chim nướng ớt xiêm vị đậm đà, thơm lừng cả gian bếp</h5>
+                        </a>
+                        <div class="mb-1 text-muted">20/12/2021</div>
+                        <p class="mb-auto">Cá chim không chỉ sở hữu chất thịt thơm ngon mà còn bổ dưỡng. Bỏ túi cách làm cá chim nướng ớt xiêm vị đậm đà...</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/galuoc.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Sống xanh</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Trứng kết hợp cùng 3 thực phẩm này chính là thần dược cho sức khỏe</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Trứng rất tốt cho sức khỏe con người. Đặc biệt khi kết hợp với 3 loại thực phẩm sau sẽ có 'thần dược' cho sức khỏe...</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/csui.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Sống xanh</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Trẻ em mấy tuổi thì uống được C sủi? Top C sủi bổ sung vitamin C cho trẻ</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Vitamin C là một chất cần thiết cho cơ thể của con người, bao gồm cả trẻ em lẫn người lớn...</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/bia.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Review sản phẩm</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Beck's - Hãng bia Đức có lượng bia tiêu thụ cao nhất toàn cầu</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Beck's là hãng bia Đức nổi tiếng, có lượng bia tiêu thụ cao nhất toàn cầu. Cùng tìm hiểu...</p>
+                    </div>
+                </div>
+                <div
+                    class="row g-0 mt-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-5 d-none d-md-block">
+                        <img src="image/Tintuc/daugoi.jpg" width="100%" alt="">
+                    </div>
+                    <div class="col p-3 ms-2 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Tư vấn sản phẩm</strong>
+                        <a href="#">
+                            <h5 class="mb-1 text-dark">Bảo vệ, chăm sóc, nuôi dưỡng tóc chuyên sâu với bộ dầu gội Megumi</h5>
+                        </a>
+                        <div class="mb-1 text-muted">22/12/2021</div>
+                        <p class="mb-auto">Megumi là thương hiệu thuộc tập đoàn Rohto-Mentholatum được thành lập từ năm 1899 tại Osaka, Nhật Bản...</p>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <a href="#" class="text-center ">Xem thêm <i class="fas fa-sort-down position-relative" style="top: -2px;"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-xl-4 tintuc">
+                <div class="position-sticky" style="top: 5rem;">
+
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-mirinda.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Từ 14/12 - 27/12 mua 6 lon Mirinda tặng 1 chai....</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-gao.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Gạo Ngon Dẻo Thơm - Bữa Cơm Đầm Ấm giảm....</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-coca.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Hóa đơn 50k sản phẩm Coca-cola, tặng 3 chai Fanta soda kem 300ml...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-ngay-den-toi.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Ngày đen tối, giảm ngập lối giảm đến 50%...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                            <img src="image/Khuyenmai/sale-duck.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Giữ nhà thơm mát sạch khuẩn - Khuyến mại giá cực hời lên đến 34%...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <footer class="container">
+        <div class="last">
+            <p>Tổng đài: 1900.9999 - 028.1204.1708 (7:00 - 21:30)</p>
+            <div class="list-profile row">
+                <div class="col-md">
+                    <ul>
+                        <p>Chính sách</p>
+                        <li>
+                            <a href="#">Chính sách đổi trả</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách giao hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách bảo mật</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Dịch vụ</p>
+                        <li>
+                            <a href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li>
+                            <a href="#">Hóa đơn điện tử</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Thông tin</p>
+                        <li>
+                            <a href="#">Thông tin công ty</a>
+                        </li>
+                        <li>
+                            <a href="#">Quy chế hoạt động</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Phản hồi</p>
+                        <li>
+                            <a href="#">Khiếu nại khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Phản hồi khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Góp ý khách hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Kết nối với chúng tôi</p>
+            <a href="#"><img src="image/logofooter.png" width="200px" alt=""></a>
+        </div>
+        <div class="text-center">
+            <p class="thong-tin">
+                © 2021. Công Ty Cổ Phần Thương Mại US. GPDKKD: 331471746 cấp ngày 29/11/2010. <br>
+                Giấy phép thiết lập mạng xã hội trên mạng (Số 0/GP-BTTTT) do khoa Công nghệ thông tin và truyền thông
+                cấp
+                ngày 21/01/2021. <br>
+                Trụ sở chính: Đại học Cần Thơ. <br>
+                Địa chỉ liên hệ: Khoa CNTT và truyền thông ĐHCT <br>
+                Email:lienhe@usmart.com <br> Chịu trách nhiệm nội dung: Trần Thị Kim Linh - Nguyễn Quốc Trạng.
+            </p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

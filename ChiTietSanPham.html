@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicons/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Nước giặt Surf hương nước hoa</title>
+    <!-- Bootstrap CSS -->
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="libs/jquery.min.js"></script>
+    <!-- Popper Bootstrap -->
+    <script src="libs/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="libs/bootstrap.min.js"></script>
+    <!-- Bootstrap table CSS -->
+    <link rel="stylesheet" href="libs/bootstrap-table.min.css">
+    <!-- Bootstrap table JS -->
+    <script src="libs/bootstrap-table.min.js"></script>
+    <!-- Table mobile -->
+    <script src="libs/bootstrap-table-mobile.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-chitietsanpham.css">
+</head>
+
+<body class="container">
+    <div id="header"></div>
+    <header class=" position-sticky" style="top: 0; z-index: 1000;">
+
+        <div class="navbar alert-success navbar-light navbar-expand-lg d-flex flex-wrap  justify-content-lg-start">
+            <div class="container-fluid">
+                <a href="TrangChu.html" class="navbar-brand ">
+                    <img src="image/favicons/xanhvang.png" width="60px" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="TrangChu.html" class="nav-link px-2 text-dark">Trang chủ</a></li>
+                        <li><a href="SanPham.html" class="nav-link px-2 text-dark">Sản phẩm</a></li>
+                        <li><a href="#" class="nav-link px-2 text-dark">Tin tức</a></li>
+                        <li><a href="#" class="nav-link px-2 text-dark">Liên hệ</a></li>
+                        <li><a href="GioHang.html" class="nav-link px-2 text-dark position-relative">Giỏ hàng
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger count"></span></a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 btn-group">
+                        <input id="search" type="search" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button id="btnsearch" class="btn btn-success"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="text-end" role="group" id="offlogin">
+                        <a href="DangKy.html"><button type="button" class="btn btn-outline-dark me-2">Đăng
+                                ký</button></a>
+                        <a href="DangNhap.html"><button type="button" class="btn btn-outline-dark">Đăng
+                                nhập</button></a>
+                    </div>
+                    <div class="dropdown text-end" id="onlogin">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="image/admin.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small position-absolute" aria-labelledby="dropdownUser1">
+                            <li>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                    </svg> Settings</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg> Profile</a></li>
+                            <li>
+                                <a href="GioHang.html" class="nav-link px-2 text-dark position-relative">Giỏ hàng</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" id="signout"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                        <path fill-rule="evenodd"
+                                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg> Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div>
+            <i class="fa fa-comment-dots fa-2x text-success position-fixed"
+                style="bottom:50px; right:2rem; z-index: 1000;" data-bs-toggle="modal" data-bs-target="#chat"></i>
+            <!-- Modal -->
+            <div class="modal fade " id="chat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-outline-success">
+                        <div class="modal-header bg-success">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Hiện tại không có quản trị viên nào ở đây hết :))))) hẹn gặp lại
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#header"><i class="far fa-arrow-alt-circle-up fa-2x text-success position-fixed"
+                    style="bottom:10px; right:2rem; z-index: 1000;"></i></a>
+        </div>
+
+        <div class="row">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="TrangChu.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Nước giặt</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Nước giặt Surf hương nước hoa</li>
+                </ol>
+            </nav>
+            <!-- MENU SẢN PHẨM -->
+            <div class="col-xl-2 menu">
+                <div class="position-sticky" style="top:5rem;">
+                    <div class="navbar navbar-expand-xl navbar-light ">
+                        <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupported">
+                            <div>
+                                <button type="button" class=" btn btn-success">Danh mục sản phẩm</button>
+                                <ul class="list-unstyled ps-0">
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#mi-collapse"
+                                            aria-expanded="false">
+                                            Mì, cháo, phở
+                                        </button>
+                                        <div class="collapse" id="mi-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="SanPham.html" class="link-dark rounded">Mì</a></li>
+                                                <li><a href="#" class="link-dark rounded">Cháo</a></li>
+                                                <li><a href="#" class="link-dark rounded">Phở</a></li>
+                                                <li><a href="#" class="link-dark rounded">Hủ tiếu</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#thit-collapse"
+                                            aria-expanded="false">
+                                            Thịt các loại
+                                        </button>
+                                        <div class="collapse" id="thit-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Thịt gà</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thịt heo</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thịt bò</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#hs-collapse"
+                                            aria-expanded="false">
+                                            Hải sản các loại
+                                        </button>
+                                        <div class="collapse" id="hs-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Cá</a></li>
+                                                <li><a href="#" class="link-dark rounded">Tôm</a></li>
+                                                <li><a href="#" class="link-dark rounded">Cua</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#rau-collapse"
+                                            aria-expanded="false">
+                                            Rau củ
+                                        </button>
+                                        <div class="collapse" id="r-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Rau các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Củ các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Trái cây các loại</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#tbyt-collapse"
+                                            aria-expanded="false">
+                                            Thiết bị y tế
+                                        </button>
+                                        <div class="collapse" id="tbyt-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Khẩu trang</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thuốc</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước rửa tay</a></li>
+                                                <li><a href="#" class="link-dark rounded">Máy lọc không khí</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#dauan-collapse"
+                                            aria-expanded="false">
+                                            Dầu ăn, gia vị
+                                        </button>
+                                        <div class="collapse" id="dauan-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Nước tương</a></li>
+                                                <li><a href="#" class="link-dark rounded">Dầu ăn</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước mắm</a></li>
+                                                <li><a href="#" class="link-dark rounded">Đường</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#dodung-collapse"
+                                            aria-expanded="false">
+                                            Đồ dùng cá nhân
+                                        </button>
+                                        <div class="collapse" id="dodung-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Đồ Skincare</a></li>
+                                                <li><a href="#" class="link-dark rounded">Dầu gội</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước súc miệng</a></li>
+                                                <li><a href="#" class="link-dark rounded">Sữa tắm</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button class="btn btn-toggle align-items-center rounded collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#thucuong-collapse"
+                                            aria-expanded="false">
+                                            Thức uống
+                                        </button>
+                                        <div class="collapse" id="thucuong-collapse">
+                                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="link-dark rounded">Nước ngọt các loại</a></li>
+                                                <li><a href="#" class="link-dark rounded">Thức uống có cồn</a></li>
+                                                <li><a href="#" class="link-dark rounded">Nước khoáng các loại</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SẢN PHẨM -->
+            <div class="col-xl-10">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="row main-image">
+                            <img src="image/ChiTietSanPham/surf1.jpg" class="img-main active-img" alt="">
+                            <img src="image/ChiTietSanPham/surf2.jpg" class="img-main " alt="">
+                            <img src="image/ChiTietSanPham/surf3.jpg" class="img-main " alt="">
+                            <img src="image/ChiTietSanPham/surf4.jpg" class="img-main " alt="">
+                            <img src="image/ChiTietSanPham/surf5.jpg" class="img-main " alt="">
+                            <img src="image/ChiTietSanPham/surf6.jpg" class="img-main " alt="">
+                            <button class="btn btn-light prev-img " onclick="plusImages(-1)">&#10094;</button>
+                            <button class="btn btn-light next-img" onclick="plusImages(1)">&#10095;</button>
+                        </div>
+
+                        <div class="row clone-image">
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf1.jpg" class="item "
+                                        onclick="currentImages(1)" alt=""></a></div>
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf2.jpg" class="item "
+                                        onclick="currentImages(2)" alt=""></a></div>
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf3.jpg" class="item "
+                                        onclick="currentImages(3)" alt=""></a></div>
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf4.jpg" class="item "
+                                        onclick="currentImages(4)" alt=""></a></div>
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf5.jpg" class="item "
+                                        onclick="currentImages(5)" alt=""></a></div>
+                            <div class="col"><a><img src="image/ChiTietSanPham/surf6.jpg" class="item "
+                                        onclick="currentImages(6)" alt=""></a></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="content">
+                            <h4>Nước giặt Surf hương nước hoa</h4>
+                            <p>
+                            <p class="text-secondary">HSD: 1 năm <span class="badge bg-danger rounded-pill">-31%</span>
+                            </p>
+                            <h4>94.500đ <span class="text-decoration-line-through text-secondary h5"> 123.000đ</span>
+                            </h4>
+                            <span>Số lượng: </span><input type="number" id="number" value="1" min="1" max="100">
+                            </p>
+                            <div class="d-grid gap-2 d-md-block">
+
+                                <button class="btn btn-warning" type="button" id="sp002" onclick="addCard(id)"><a
+                                        class="text-dark" href="GioHang.html">Mua ngay</a> </button>
+                                <button class="btn btn-success" id="sp002" type="button" onclick="addCard(id)">Thêm vào
+                                    giỏ hàng</button>
+                            </div>
+                            <div class="alert alert-info" style="margin-top:20px;" role="alert">
+                                <strong>Khuyến mãi:</strong> Mua từ 2 sản phẩm trở lên được tặng quà
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                Đặt online <strong>giao tận nhà </strong>đúng giờ (nếu trễ tặng PMH 20.000₫) <br>
+                                Đổi trả sản phẩm trong 7 ngày( <a href="#" class="text-decoration-none">Xem điều
+                                    khoản</a> )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <section class="row">
+
+                            <p class="h5 title text-uppercase">Thông tin sản phẩm</p>
+                            <span>Surf là sản phẩm nước giặt thương hiệu đến từ Hà Lan và Anh, nước giặt Surf giúp sạch
+                                nhanh
+                                hiệu quả, đưa hương thơm lan toả dù ngày nắng hay mưa, giúp bạn tự tin với quần áo luôn
+                                thơm
+                                tho, sạch sẽ. Nước giặt Surf hương nước hoa túi 3 lít với hương cỏ hoa thơm mát dễ
+                                chịu</span>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-secondary col-2">Thương hiệu</td>
+                                        <td>Surf (Anh và Hà Lan)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Sản xuất tại</td>
+                                        <td>Việt Nam</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Công dụng</td>
+                                        <td>Giặt sạch nhẹ nhàng, loại bỏ mùi hôi, khói bụi. Lưu lại hương thơm bền lâu
+                                            trên
+                                            áo
+                                            quần</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Mùi hương</td>
+                                        <td>Hương nước hoa</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Sử dụng</td>
+                                        <td>Giặt tay, giặt máy cửa trên</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Khối lượng</td>
+                                        <td>3 lít</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Hướng dẫn sử dụng</td>
+                                        <td>Xử lý vết bẩn trước khi giặt thoa 1 ít nước giặt lên vết bẩn và chà nhẹ.
+                                            Điều
+                                            chỉnh
+                                            lượng nước giặt tương ứng với lượng quần áo và độ bẩn. Đối với Giặt máy dùng
+                                            76ml
+                                            cho một lần giặt thông thường. Chọn chế độ giặt cho phù hợp. Đối với giặt
+                                            tay
+                                            dùng
+                                            38ml cho một lần giặt thông thường. Cho nước giặt vào chậu nước đánh mạnh để
+                                            tạo
+                                            bọt. Giặt quần áo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Lưu ý</td>
+                                        <td>Kiểm tra độ bền màu trước khi sử dụng. Rửa sạch và lau khô tay sau khi dùng.
+                                            Để
+                                            xa
+                                            tầm tay trẻ em. Rửa sạch bằng nước nếu bị dây vào mắt</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-secondary col-2">Bảo quản</td>
+                                        <td>Nơi khô ráo thoáng mát. Tránh tiếp xúc trực tiếp với ánh nắng mặt trời</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </section>
+                        <section class="row">
+                            <p class="h5 title text-uppercase">Đánh giá sản phẩm</p>
+
+                            <div class="col-md-6">
+                                <div class="height-100 d-flex justify-content-center align-items-center">
+                                    <div class=" p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i class="fa fa-star"></i>
+                                            </div>
+                                            <h5 class="review-count">166 đánh giá</h5>
+                                        </div>
+                                        <div class="mt-5 d-flex justify-content-between align-items-center">
+                                            <h5 class="review-stat">100 đánh giá</h5>
+                                            <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> </div>
+                                        </div>
+                                        <div class="mt-1 d-flex justify-content-between align-items-center">
+                                            <h5 class="review-stat">40 đánh giá</h5>
+                                            <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mt-1 d-flex justify-content-between align-items-center">
+                                            <h5 class="review-stat">20 đánh giá</h5>
+                                            <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mt-1 d-flex justify-content-between align-items-center">
+                                            <h5 class="review-stat">5 đánh giá</h5>
+                                            <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star rating-color"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mt-1 d-flex justify-content-between align-items-center">
+                                            <h5 class="review-stat">1 đánh giá</h5>
+                                            <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="justify-content-center mt-3">
+                                    <p class="h5">Gửi đánh giá của bạn</p>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="stars">
+                                                <form action=""> <input class="star star-5" id="star-5" type="radio"
+                                                        name="star" /> <label class="star star-5" for="star-5"></label>
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" />
+                                                    <label class="star star-4" for="star-4"></label> <input
+                                                        class="star star-3" id="star-3" type="radio" name="star" />
+                                                    <label class="star star-3" for="star-3"></label> <input
+                                                        class="star star-2" id="star-2" type="radio" name="star" />
+                                                    <label class="star star-2" for="star-2"></label> <input
+                                                        class="star star-1" id="star-1" type="radio" name="star" />
+                                                    <label class="star star-1" for="star-1"></label>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label h5">Nhận xét</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="2"></textarea>
+                                    </div>
+                                    <div class="position-relative">
+                                        <button class="btn btn-success " type="button">Gửi</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="container">
+        <div class="last">
+            <p>Tổng đài: 1900.9999 - 028.1204.1708 (7:00 - 21:30)</p>
+            <div class="list-profile row">
+                <div class="col-md">
+                    <ul>
+                        <p>Chính sách</p>
+                        <li>
+                            <a href="#">Chính sách đổi trả</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách giao hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách bảo mật</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Dịch vụ</p>
+                        <li>
+                            <a href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Điều khoản dịch vụ</a>
+                        </li>
+                        <li>
+                            <a href="#">Hóa đơn điện tử</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Thông tin</p>
+                        <li>
+                            <a href="#">Thông tin công ty</a>
+                        </li>
+                        <li>
+                            <a href="#">Quy chế hoạt động</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <ul>
+                        <p>Phản hồi</p>
+                        <li>
+                            <a href="#">Khiếu nại khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Phản hồi khách hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Góp ý khách hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Kết nối với chúng tôi</p>
+            <a href="#"><img src="image/logofooter.png" width="200px" alt=""></a>
+        </div>
+        <div class="text-center">
+            <p class="thong-tin">
+                © 2021. Công Ty Cổ Phần Thương Mại US. GPDKKD: 331471746 cấp ngày 29/11/2010. <br>
+                Giấy phép thiết lập mạng xã hội trên mạng (Số 0/GP-BTTTT) do khoa Công nghệ thông tin và truyền thông
+                cấp
+                ngày 21/01/2021. <br>
+                Trụ sở chính: Đại học Cần Thơ. <br>
+                Địa chỉ liên hệ: Khoa CNTT và truyền thông ĐHCT <br>
+                Email:lienhe@usmart.com <br> Chịu trách nhiệm nội dung: Trần Thị Kim Linh - Nguyễn Quốc Trạng.
+            </p>
+        </div>
+    </footer>
+    <script src="js/ChiTietSanPham.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
