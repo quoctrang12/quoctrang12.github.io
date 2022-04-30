@@ -113,7 +113,7 @@ function frmJson() {
             }
             else{
               var at = document.createAttribute('action');
-              at.value = "TrangChu.html";
+              at.value = "index.html";
               document.getElementById('login').setAttributeNode(at);
             }
             localStorage.setItem('login','on');
